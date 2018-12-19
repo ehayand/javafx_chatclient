@@ -16,6 +16,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
+import java.time.LocalTime;
+
+/**
+ * Created by ehay@naver.com on 2018-12-15
+ * Blog : http://ehay.tistory.com
+ * Github : http://github.com/ehayand
+ */
 
 public class Main extends Application {
 
@@ -113,7 +120,7 @@ public class Main extends Application {
         input.setDisable(true);
 
         input.setOnAction(event -> {
-            send(userName.getText() + ": " + input.getText() + "\n");
+            send("{ " + userName.getText() + ", " + LocalTime.now() + ", " + input.getText() + " }\n");
             input.setText("");
             input.requestFocus();
         });
@@ -122,7 +129,7 @@ public class Main extends Application {
         sendButton.setDisable(true);
 
         sendButton.setOnAction(event -> {
-            send(userName.getText() + ": " + input.getText() + "\n");
+            send("{ " + userName.getText() + ", " + LocalTime.now() + ", " + input.getText() + " }\n");
             input.setText("");
             input.requestFocus();
         });
